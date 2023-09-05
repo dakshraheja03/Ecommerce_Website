@@ -9,9 +9,9 @@ export default function Cart() {
 
   return (
     <>
-      <div className="bg-gray-100 h-screen py-8">
+      <div className="bg-gray-100 h-screen py-8 -mt-6">
         <div className="container mx-auto px-4">
-          <h1 className="text-2xl font-semibold mb-10 mt-3">Shopping Cart</h1>
+          <h1 className="text-2xl font-semibold mb-10">Shopping Cart</h1>
           <div className="flex flex-col md:flex-row gap-4">
             <div className="md:w-3/4">
               <div className="bg-white rounded-lg shadow-md p-6 mb-4">
@@ -148,9 +148,11 @@ export default function Cart() {
                   <span className="font-semibold">Total</span>
                   <span className="font-semibold">$21.98</span>
                 </div>
+                <Link to="/checkout">
                 <button className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">
                   Checkout
                 </button>
+                </Link>
               </div>
             </div>
           </div>

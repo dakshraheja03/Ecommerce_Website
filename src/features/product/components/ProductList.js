@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import { Fragment } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+import { Link } from 'react-router-dom';
 
-const items = [
-  { id: 1, title: 'Back End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
-  { id: 2, title: 'Front End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
-  { id: 3, title: 'User Interface Designer', department: 'Design', type: 'Full-time', location: 'Remote' },
-]
+// const items = [
+//   { id: 1, title: 'Back End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
+//   { id: 2, title: 'Front End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
+//   { id: 3, title: 'User Interface Designer', department: 'Design', type: 'Full-time', location: 'Remote' },
+// ]
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
   { name: 'Best Rating', href: '#', current: false },
@@ -18,13 +19,13 @@ const sortOptions = [
   { name: 'Price: Low to High', href: '#', current: false },
   { name: 'Price: High to Low', href: '#', current: false },
 ]
-const subCategories = [
-  { name: 'Totes', href: '#' },
-  { name: 'Backpacks', href: '#' },
-  { name: 'Travel Bags', href: '#' },
-  { name: 'Hip Bags', href: '#' },
-  { name: 'Laptop Sleeves', href: '#' },
-]
+// const subCategories = [
+//   { name: 'Totes', href: '#' },
+//   { name: 'Backpacks', href: '#' },
+//   { name: 'Travel Bags', href: '#' },
+//   { name: 'Hip Bags', href: '#' },
+//   { name: 'Laptop Sleeves', href: '#' },
+// ]
 const filters = [
   {
     id: 'color',
@@ -106,7 +107,7 @@ const products = [
 export default function ProductList() {
   // const count = useSelector(selectCount);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   return (
     <>
      <div className="bg-white">
@@ -324,6 +325,7 @@ export default function ProductList() {
       <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
+            <Link to="/product-detail">
             <div key={product.id} className="group relative">
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                 <img
@@ -345,6 +347,7 @@ export default function ProductList() {
                 <p className="text-sm font-medium text-gray-900">{product.price}</p>
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </div>

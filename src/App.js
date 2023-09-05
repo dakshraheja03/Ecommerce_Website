@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import CartPage from './pages/CartPage';
+import CheckOut from './pages/CheckOut';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <CartPage/>,
+  },
+  {
+    path: "/checkout",
+    element: <CheckOut/>,
+  },
+  {
+    path: "/product-detail",
+    element: <ProductDetailPage/>,
   },
 ]);
 
