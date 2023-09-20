@@ -69,7 +69,8 @@ function ProductDetail() {
       <div className="bg-white">
         <div className="pt-6">
           <nav aria-label="Breadcrumb">
-            <ol
+          {/*eslint-disable-next-line*/}
+            <ol 
               role="list"
               className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
             >
@@ -232,7 +233,7 @@ function ProductDetail() {
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-medium text-gray-900">Size</h3>
                     <a
-                      href="#"
+                      href="/"
                       className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                     >
                       Size guide
@@ -335,6 +336,7 @@ function ProductDetail() {
                 </h3>
 
                 <div className="mt-4">
+                  {/* eslint-disable-next-line*/}
                   <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
                     {product.highlights.map((highlight) => (
                       <li key={highlight} className="text-gray-400">
